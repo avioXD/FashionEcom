@@ -1,0 +1,26 @@
+.container-fluid {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    width: 24rem;
+    border: 0;
+    margin: auto;
+    margin-top: 10rem;
+    padding: 2rem;
+}
+
+.icon {
+    cursor: pointer;
+    width: 12rem;
+}
+
+.invalid {
+    background-color: rgb(255, 0, 0)!important;
+    border-bottom: 0px solid rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+}

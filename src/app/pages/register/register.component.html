@@ -1,0 +1,54 @@
+<div class="container-fluid bg-colored p-0">
+    <div class="card">
+        <span class="ab-text-bg text-center">REGISTER</span>
+        <form #register="ngForm" (ngSubmit)="register.valid && onSubmit(register.value)">
+            <span class="  p-input-icon-left mt-4">
+                <i class="pi pi-user"></i>
+                <input id="float-input" type="text" 
+                #name="ngModel"
+                name="name"
+                required [pattern]="nameRegex"
+                [ngClass]="{'invalid':register.submitted &&  !name.valid}"
+                pInputText placeholder="Name" [(ngModel)]="registerModel.name"> 
+            </span>
+            <span class="p-float-label p-input-icon-left ">
+                <i class="pi pi-envelope"></i>
+                <input id="float-input" placeholder="Email" type="email" 
+                #email="ngModel"
+                name="email"
+                required [pattern]="emailRegex"
+                [class.invalid]=" register.submitted &&  !email.valid"
+                pInputText [(ngModel)]="registerModel.email"> 
+            </span>
+            <span class="p-float-label p-input-icon-left  ">
+                <i class="pi pi-mobile"></i>
+                <input id="float-input"
+                #contact_number="ngModel"
+                name="contact_number"
+                placeholder="Mobile Number" type="telephone" pInputText [(ngModel)]="registerModel.contact_number"> 
+            </span>
+            <span class="p-float-label p-input-icon-left  ">
+                <i class="pi pi-lock"></i>
+                <input id="float-input" 
+                #password="ngModel"
+                required  
+                [class.invalid]=" register.submitted && password.value != cpassword.value "
+                name="password"
+                placeholder=" Password" type="password" pInputText [(ngModel)]="registerModel.password"> 
+            </span>
+            <span class="p-float-label p-input-icon-left  ">
+                <i class="pi pi-unlock"></i>
+                <input id="float-input" 
+                #cpassword="ngModel"
+                name="cpassword"
+                required 
+                [class.invalid]=" register.submitted && password.value != cpassword.value "
+                placeholder="Confirm Password" type="password" pInputText [(ngModel)]="registerModel.cpassword"> 
+            </span>
+
+            <button type="submit" class="btn-custom-one my-3">Register</button>
+            <h4 class="ab-text-md-op">Already have account? <a>Login now</a></h4>
+            <img class="d-flex icon mx-auto " src="../../../assets/icon/btn_google_signin_dark_normal_web@2x.png" alt="" srcset="">
+        </form>
+    </div>
+</div>

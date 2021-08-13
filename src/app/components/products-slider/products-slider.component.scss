@@ -1,0 +1,11 @@
+.swiper-container {
+    padding: 0.5rem;
+    padding-bottom: 2rem;
+    width: 100%;
+    height: auto;
+}
+
+.swiper-container .swiper-slide:nth-child(2n) {
+    height: 15rem;
+    line-height: 15rem;
+}

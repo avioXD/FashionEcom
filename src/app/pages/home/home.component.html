@@ -1,0 +1,65 @@
+<div class="container-fluid bg-colored p-0">
+    <swiper [pagination]="{ 
+        dynamicBullets: true,
+        clickable:true
+      }" class="mySwiper" [autoplay]="{
+          delay: 3500,
+          disableOnInteraction:true 
+        }" class=".bg-colored">
+
+        <ng-template *ngFor="let temp of heroList" swiperSlide>
+            <img [src]="temp.url" alt="" srcset="">
+            <div class="text">
+                <span class="ab-sub-title">{{temp.p1}}</span>
+                <span class="ab-title">{{temp.h1}}</span>
+                <button class="btn-custom-one">Shop Now</button>
+            </div>
+        </ng-template>
+    </swiper>
+    <div class="selector">
+        <swiper class="mySwiper" [autoplay]="{
+              delay: 2000,
+              disableOnInteraction:true 
+            }">
+
+            <ng-template *ngFor="let temp of mensSection" swiperSlide>
+                <img [src]="temp.url" alt="" srcset="">
+                <div class="text">
+                    <span class="ab-sub-title">{{temp.text}}</span>
+                    <button class="btn-custom-one">Shop Now</button>
+                </div>
+            </ng-template>
+        </swiper>
+        <swiper class="mySwiper" [autoplay]="{
+              delay: 1500,
+              disableOnInteraction:true 
+            }">
+
+            <ng-template *ngFor="let temp of womensSection" swiperSlide>
+                <img [src]="temp.url" alt="" srcset="">
+                <div class="text">
+                    <span class="ab-sub-title">{{temp.text}}</span>
+                    <button class="btn-custom-one">Shop Now</button>
+                </div>
+            </ng-template>
+        </swiper>
+        <swiper class="mySwiper" [autoplay]="{
+              delay: 3500,
+              disableOnInteraction:true 
+            }">
+
+            <ng-template *ngFor="let temp of heroList" swiperSlide>
+                <img [src]="temp.url" alt="" srcset="">
+                <div class="text">
+                    <p class="ab-sub-title">Leathers</p>
+                    <span class="ab-title"></span>
+                    <button class="btn-custom-one">Shop Now</button>
+                </div>
+            </ng-template>
+        </swiper>
+    </div>
+    <div class="products">
+        <h1 class="ab-sub-title my-2 mx-4">Products</h1>
+        <app-products-slider></app-products-slider>
+    </div>
+</div>

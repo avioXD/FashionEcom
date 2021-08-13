@@ -1,0 +1,27 @@
+<swiper [slidesPerView]="1" [spaceBetween]="10" [pagination]="{
+    clickable: true
+  }" [breakpoints]="{
+      
+    '640': {
+      slidesPerView: 2,
+      spaceBetween: 20
+    },
+    '768': {
+      slidesPerView: 3,
+      spaceBetween: 40
+    },
+    '1024': {
+      slidesPerView: 4,
+      spaceBetween: 40
+    },'1270': {
+        slidesPerView: 6,
+        spaceBetween: 10
+      }
+    
+  }" class="mySwiper ">
+    <ng-template swiperSlide *ngFor="let item of product">
+        <app-products [item]=item></app-products>
+    </ng-template>
+
+
+</swiper>

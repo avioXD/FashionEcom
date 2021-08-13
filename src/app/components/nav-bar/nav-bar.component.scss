@@ -1,0 +1,73 @@
+@import "../../../theme.scss";
+/////////////////
+.burger {
+    display: none;
+    position: absolute;
+    top: 0.2em;
+    right: 2.4rem;
+    width: 2.6rem;
+    height: 4rem;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    &:focus {
+        outline-color: currentColor;
+    }
+}
+
+
+/* when the .burger is toggled to .open, update the group elements to toggle between the hamburger and x symbol */
+
+.burger svg {
+    width: 100%;
+    height: auto;
+    display: block;
+    // filter: drop-shadow(5px 5px 2px hsl(0, 0%, 78%));
+}
+
+.burger .translate {
+    transition: transform 0.25s ease-in-out;
+    transition-delay: 0.25s;
+}
+
+.burger .rotate {
+    transition: transform 0.25s ease-in-out;
+    transition-delay: 0s;
+}
+
+.burger.open .translate {
+    transform: translateY(0);
+    transition-delay: 0s;
+}
+
+.burger.open .rotate {
+    transform: rotate(0);
+    transition-delay: 0.25s;
+}
+
+.btn-side-nav {
+    background: transparent;
+    padding: 0.4rem 1.4rem;
+    border: 0px;
+    text-align: center;
+    font-weight: 600;
+}
+
+@media only screen and(max-width: 801px) {
+    mat-toolbar {
+        height: max-content;
+        padding-bottom: 2rem;
+        padding-top: 2rem;
+    }
+    .d-flex {
+        display: flex;
+        flex-direction: column;
+    }
+    .toggle-ul {
+        overflow: hidden;
+        height: 0rem;
+    }
+    .burger {
+        display: block;
+    }
+}
